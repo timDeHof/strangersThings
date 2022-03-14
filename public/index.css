@@ -1,17 +1,21 @@
 * {
   display: flex;
 }
-
-body {
-  display: flex;
-  flex-direction: row;
+.web-page {
+  flex-direction: column;
 }
 .header {
   display: flex;
   background-color: aqua;
 }
 .main {
-  display: flex;
-
   background-color: blueviolet;
+}
+.posts {
+  flex-direction: column;
+}
+.post {
+  flex-direction: column;
+  border: 1px solid black;
+  margin-bottom: 3px;
 }

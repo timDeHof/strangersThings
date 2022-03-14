@@ -1,32 +1,21 @@
 import React from "react";
-import { BrowserRouter as router, Route, Link } from "react-router-dom";
-import Login from "./Login";
-import SignIn from "./SignIn";
+import { Link } from "react-router-dom";
 
 const Navbar = (props) => {
   return (
-    <router>
-      <div id="navbar">
-        <ul>
-          <li>
-            <link to="/">Home</link>
-          </li>
-          <li to="/posts">Posts</li>
-          <li to="/LogIn">Log In</li>
-        </ul>
-      </div>
-      <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
-        <Route path=" /posts">
-          <Posts />
-        </Route>
-        <Route path=" /LogIn">
-          <Login />
-        </Route>
-      </Switch>
-    </router>
+    <div className="header">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/posts">Posts</Link>
+        </li>
+        <li>
+          <Link to="/LogIn">Log In</Link>
+        </li>
+      </ul>
+    </div>
   );
 };
 

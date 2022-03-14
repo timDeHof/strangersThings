@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import Login from "./Login";
+
+import Navbar from "./Navbar";
+import Posts from "./Posts";
 
 const Main = () => {
-  //   const [posts, setPosts] = useState([]);
-  //   useEffect(() => {
-  //     const fetchPost = async () => {
-  //       const response = await fetch(
-  //         "https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/posts"
-  //       );
-  //     };
-  //   });
-
   return (
-    <div>
-      <h1 className="main">hello main</h1>
+    <div className="web-page">
+      <Navbar />
+      <Switch>
+        <Route path="/posts">
+          <Posts />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+      </Switch>
     </div>
   );
 };
