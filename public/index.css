@@ -1,0 +1,17 @@
+* {
+  display: flex;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+.header {
+  display: flex;
+  background-color: aqua;
+}
+.main {
+  display: flex;
+
+  background-color: blueviolet;
+}
