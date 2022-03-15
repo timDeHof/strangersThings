@@ -18,7 +18,7 @@ export const fetchGetPosts = async () => {
   }
 };
 
-export const fetchRegisterUser = async () => {
+export const RegisterUser = async () => {
   try {
     const response = await fetch(`${URL}/users/register`);
     const result = await response.json();
