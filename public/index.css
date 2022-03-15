@@ -1,26 +1,43 @@
 * {
   padding: 0;
-  margin: 0;
-  width: auto;
-  display: flex;
+  margin-right: 3vw;
+  width: 100%;
+  /* display: flex; */
 }
 .web-page {
   flex-direction: column;
+  background-color: lightgrey;
+  width: 100%;
 }
 .header {
   display: flex;
-  background-color: aqua;
+  background-color: rgba(50, 90, 177, 0.678);
+  width: 100%;
+  /* margin-left: -13vw; */
+  position: sticky;
+  top: 0;
+  padding: 1vw;
 }
+/* .title{
+  padding:
+} */
 .main {
   background-color: blueviolet;
+}
+.navBar {
+  font-size: 25px;
+  display: flex;
+  list-style-type: none;
 }
 .posts {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1vw;
 }
 .post {
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid white;
   margin-bottom: 3px;
+  padding: 12px;
 }
