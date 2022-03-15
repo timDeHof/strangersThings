@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { fetchRegisterUser } from "../api";
 
-function Login() {
+function SignUp() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   useEffect(() => {
@@ -12,13 +11,16 @@ function Login() {
     };
     getToken();
   }, []);
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+    console.log(response);
+  };
 
   return (
-    <div className="logIn">
-      <h1>Please log in!</h1>
-      <form className="form" onSubmit={true}>
+    <div>
+      <h1>Thank you for signing up!</h1>
+      <form className="form" onSubmit={handleSubmit}>
         {" "}
-        // write a handleSubmit fcn
         <input
           type="text"
           placeholder="username"
@@ -39,4 +41,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
