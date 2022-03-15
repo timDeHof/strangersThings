@@ -6,13 +6,13 @@ const Navbar = (props) => {
     <div className="header">
       <h1 className="title">Stranger's Things</h1>
       <ul className="navBar">
-        <li>
+        <li className="link">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className="link">
           <Link to="/posts">Posts</Link>
         </li>
-        <li>
+        <li className="link">
           <Link to="/LogIn">Log In</Link>
         </li>
       </ul>

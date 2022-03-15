@@ -3,7 +3,7 @@ import Input from "./Input";
 
 function Login() {
   return (
-    <div>
+    <div className="logIn">
       <h1>Please log in!</h1>
       <form className="form">
         <Input type="text" placeholder="username" />
