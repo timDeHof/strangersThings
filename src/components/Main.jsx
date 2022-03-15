@@ -13,7 +13,9 @@ const Main = () => {
         <Route path="/posts">
           <Posts />
         </Route>
-        <Route path="/login">{/* <Login /> */}</Route>
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route path="/signup">
           <SignUp />
         </Route>

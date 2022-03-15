@@ -10,12 +10,12 @@ function SignUp() {
       console.log(response);
     };
     getToken();
-  }, []);
+  }, []); // need to put something in the empty array to check if the state got changed, if it was changed .. it will re-render.
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     console.log(response);
   };
-
+  // not returning anything
   return (
     <div>
       <h1>Thank you for signing up!</h1>
