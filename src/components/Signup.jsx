@@ -35,7 +35,7 @@ function SignUp() {
             setPassword(ev.target.value);
           }}
         />
-        <button type="submit">Log in</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchRegisterUser } from "../api";
+import { registerUser } from "../api";
 
 function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   useEffect(() => {
     const getToken = async () => {
-      const response = await fetchRegisterUser();
+      const response = await registerUser();
       console.log(response);
     };
     getToken();

@@ -7,6 +7,7 @@ const URL = BASE_URL + "/api/" + COHORT;
 //console.log(URL);
 
 // fetch all posts
+
 export const fetchGetPosts = async () => {
   try {
     const response = await fetch(`${URL}/posts`);
@@ -18,7 +19,8 @@ export const fetchGetPosts = async () => {
   }
 };
 
-export const RegisterUser = async () => {
+// it should send the user info to the API and return a Token.
+export const registerUser = async () => {
   try {
     const response = await fetch(`${URL}/users/register`);
     const result = await response.json();

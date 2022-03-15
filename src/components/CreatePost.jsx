@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Input from "./Input";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
