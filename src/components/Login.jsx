@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { loginUser } from "../api";
 
 function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  // useEffect(() => {
-  //   const getToken = async () => {
-  //     const response = await loginUser(username, password);
-  //     console.log(response);
-  //   };
-  //   getToken();
-  // }, []);
 
   return (
     <div className="logIn">
       <h1>
         Welcome to Stranger's Things <br />
-        Please login to start the Bargin's!
+        Please login to start the Bargain's!
       </h1>
       <form
         className="form"
@@ -28,8 +21,6 @@ function Login() {
           console.log(result);
         }}
       >
-        {" "}
-        {/* // write a handleSubmit fcn */}
         <input
           value={username}
           type="text"
@@ -46,9 +37,16 @@ function Login() {
             setPassword(ev.target.value);
           }}
         />
-        // ternary statement:
         {localStorage.getItem("token") ? (
-          <button type="submit">Log out</button>
+          <button
+            type="submit"
+            onClick={() => {
+              localStorage.clear;
+              console.log("token is:", localStorage.getItem("token"));
+            }}
+          >
+            Log out
+          </button>
         ) : (
           <button type="submit">Log in</button>
         )}

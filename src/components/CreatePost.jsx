@@ -17,7 +17,7 @@ function CreatePost() {
         description: `${description}`,
         price: `${price}`,
         location: `${location}`,
-        willDeliver: true,
+        willDeliver: `${willDeliver}`,
       },
     };
 
