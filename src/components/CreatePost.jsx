@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPost } from "../api";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
@@ -6,10 +7,19 @@ function CreatePost() {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [willDeliver, setWillDeliver] = useState(false);
+  const token = localStorage.getItem("token");
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    console.log(`title: ${title}`);
+    const postObject = {
+      title: { title },
+      description: { description },
+      price: { price },
+      location: { location },
+    };
+    const result = await createPost(postObject, token);
+
+    console.log(result);
   };
   return (
     <div>
