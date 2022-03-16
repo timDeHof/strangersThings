@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import Login from "./Login";
+import LoginForm from "./LoginForm";
 import SignUp from "./Signup";
 import Navbar from "./Navbar";
 import Posts from "./Posts";
@@ -13,8 +13,8 @@ const Main = () => {
         <Route path="/posts">
           <Posts />
         </Route>
-        <Route path="/login">
-          <Login />
+        <Route path="/loginForm">
+          <LoginForm />
         </Route>
         <Route path="/signup">
           <SignUp />

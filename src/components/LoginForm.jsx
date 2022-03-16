@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { loginUser } from "../api";
 
-function Login() {
+function LoginForm() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   let [message, setMessage] = useState("");
@@ -78,4 +78,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;
