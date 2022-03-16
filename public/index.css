@@ -19,10 +19,23 @@
   color: white;
   text-shadow: 2px 2px grey;
   text-align: center;
+  border: 2px outset white;
 }
+
 .link :visited {
   color: white;
   text-decoration: none;
+}
+.link :link {
+  color: white;
+  text-decoration: none;
+}
+.link :hover {
+  color: black;
+  border: 1px outset white;
+}
+.link :active {
+  color: rgba(37, 37, 135, 0.743);
 }
 
 body {
