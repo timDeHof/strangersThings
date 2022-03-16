@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createPost } from "../api";
 
-function CreatePost({ posts, setPosts }) {
+function CreatePostForm({ posts, setPosts }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -24,7 +24,8 @@ function CreatePost({ posts, setPosts }) {
     };
 
     const result = await createPost(post, token);
-    setPosts([result, ...posts]); // would like for this to re-render posts
+    setPosts([result, ...posts]); // would like for this to re-render posts with new post
+    // I get an error but refresh page the new post shows up
 
     // console.log(result);
   };
@@ -72,4 +73,4 @@ function CreatePost({ posts, setPosts }) {
   );
 }
 
-export default CreatePost;
+export default CreatePostForm;

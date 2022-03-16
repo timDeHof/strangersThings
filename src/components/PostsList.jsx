@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { fetchGetPosts } from "../api";
-import CreatePost from "./CreatePost";
+import CreatePostForm from "./CreatePostForm";
 
 const PostsList = () => {
   const [posts, setPosts] = useState([]);
@@ -15,11 +15,11 @@ const PostsList = () => {
 
   // fetch all posts
 
-  console.log("posts:", posts);
+  //console.log("posts:", posts);
   return (
     <div className="posts">
       {localStorage.getItem("token") ? (
-        <CreatePost posts={posts} setPosts={setPosts} />
+        <CreatePostForm posts={posts} setPosts={setPosts} />
       ) : null}
       <h1>Posts</h1>
       {posts.map((post) => {
