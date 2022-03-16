@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { registerUser } from "../api";
 
-function SignUp({ setToken }) {
+function SignUp() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
 
   return (
     <div className="signUp">
@@ -18,6 +19,7 @@ function SignUp({ setToken }) {
           const result = await registerUser(username, password);
 
           localStorage.setItem("token", result.data.token);
+          setToken(result.data.token);
         }}
       >
         <input

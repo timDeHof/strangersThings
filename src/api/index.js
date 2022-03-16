@@ -37,3 +37,6 @@ export const registerUser = async (username, password) => {
   console.log(data);
   return data;
 };
+// loginUser
+// singlePost
+//

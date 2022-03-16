@@ -36,7 +36,12 @@ function Login() {
             setPassword(ev.target.value);
           }}
         />
-        <button type="submit">Log in</button>
+        // ternary statement:
+        {localStorage.getItem("token") ? (
+          <button type="submit">Log out</button>
+        ) : (
+          <button type="submit">Log in</button>
+        )}
       </form>
     </div>
   );
