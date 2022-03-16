@@ -8,7 +8,7 @@ function CreatePost() {
   const [location, setLocation] = useState("");
   const [willDeliver, setWillDeliver] = useState(false);
   const token = localStorage.getItem("token");
-
+  // console.log(token);
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     const postObject = {
@@ -17,9 +17,10 @@ function CreatePost() {
       price: { price },
       location: { location },
     };
+    console.log(postObject);
     const result = await createPost(postObject, token);
 
-    console.log(result);
+    // console.log(result);
   };
   return (
     <div>
