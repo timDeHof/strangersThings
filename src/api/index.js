@@ -38,5 +38,23 @@ export const registerUser = async (username, password) => {
   return data;
 };
 // loginUser
+export const loginUser = async (username, password) => {
+  const response = await fetch(`${URL}/users/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user: {
+        username,
+        password,
+      },
+    }),
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
+
 // singlePost
 //
