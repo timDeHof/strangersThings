@@ -4,6 +4,7 @@ import { registerUser } from "../api";
 function SignUp() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [token, setToken] = useState("");
 
   return (
@@ -36,6 +37,14 @@ function SignUp() {
           placeholder="password"
           onChange={(ev) => {
             setPassword(ev.target.value);
+          }}
+        />
+        <input
+          type="confirmPassword"
+          value={confirmPassword}
+          placeholder="confirmPassword"
+          onChange={(ev) => {
+            setConfirmPassword(ev.target.value);
           }}
         />
         <button type="submit">Sign Up</button>

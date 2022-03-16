@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { createPost } from "../api";
 
-function CreatePost() {
+function CreatePost({ posts, setPosts }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [willDeliver, setWillDeliver] = useState(false);
+
   const token = localStorage.getItem("token");
+
   // console.log(token);
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -22,6 +24,7 @@ function CreatePost() {
     };
 
     const result = await createPost(post, token);
+    setPosts([result, ...posts]); // would like for this to re-render posts
 
     // console.log(result);
   };
@@ -62,7 +65,7 @@ function CreatePost() {
           value={willDeliver}
           onChange={(ev) => setWillDeliver(ev.target.value)}
         ></input>
-        <label for="willDeliver">Will Deliver</label>
+        <label htmlFor="willDeliver">Will Deliver</label>
         <button type="submit">Submit</button>
       </form>
     </div>

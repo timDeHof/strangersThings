@@ -6,7 +6,7 @@ function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log("token is:", localStorage.getItem("token"));
+  //console.log("token is:", localStorage.getItem("token"));
   // isLogIn = () => {};
   return (
     <div className="logIn">
@@ -20,6 +20,7 @@ function Login() {
           ev.preventDefault();
 
           const result = await loginUser(username, password);
+
           console.log(result);
         }}
       >

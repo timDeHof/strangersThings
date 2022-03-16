@@ -18,7 +18,9 @@ const Posts = () => {
   console.log("posts:", posts);
   return (
     <div className="posts">
-      {localStorage.getItem("token") ? <CreatePost /> : null}
+      {localStorage.getItem("token") ? (
+        <CreatePost posts={posts} setPosts={setPosts} />
+      ) : null}
       <h1>Posts</h1>
       {posts.map((post) => {
         return (
