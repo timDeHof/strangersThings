@@ -5,6 +5,7 @@ import { loginUser } from "../api";
 function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  let [message, setMessage] = useState("");
 
   //console.log("token is:", localStorage.getItem("token"));
   // isLogIn = () => {};
@@ -14,14 +15,23 @@ function Login() {
         Welcome to Stranger's Things <br />
         Please login to start the Bargain's!
       </h1>
+
       <form
         className="form"
         onSubmit={async (ev) => {
           ev.preventDefault();
 
           const result = await loginUser(username, password);
+          setMessage(result.data.message);
 
-          console.log(result);
+          //console.log(result);
+          function getMessage(message) {
+            return <h3>`${message}`</h3>;
+          }
+          getMessage(message);
+          console.log(message);
+          setUserName("");
+          setPassword("");
         }}
       >
         <input

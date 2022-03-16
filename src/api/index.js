@@ -7,7 +7,6 @@ const URL = BASE_URL + "/api/" + COHORT;
 //console.log(URL);
 
 // fetch all posts
-
 export const fetchGetPosts = async () => {
   try {
     const response = await fetch(`${URL}/posts`);
@@ -52,11 +51,11 @@ export const loginUser = async (username, password) => {
     }),
   });
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
   return data;
 };
 
-// singlePost
+// creates a new post
 export const createPost = async ({ post }, token) => {
   const response = await fetch(`${URL}/posts`, {
     method: "POST",
