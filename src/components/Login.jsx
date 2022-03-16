@@ -6,6 +6,8 @@ function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  console.log("token is:", localStorage.getItem("token"));
+  // isLogIn = () => {};
   return (
     <div className="logIn">
       <h1>
@@ -28,6 +30,8 @@ function Login() {
           onChange={(ev) => {
             setUserName(ev.target.value);
           }}
+          min="10"
+          required
         />
         <input
           value={password}
@@ -36,19 +40,27 @@ function Login() {
           onChange={(ev) => {
             setPassword(ev.target.value);
           }}
+          min="10"
+          required
         />
         {localStorage.getItem("token") ? (
           <button
             type="submit"
             onClick={() => {
-              localStorage.clear;
-              console.log("token is:", localStorage.getItem("token"));
+              //localStorage.clear();
             }}
           >
             Log out
           </button>
         ) : (
-          <button type="submit">Log in</button>
+          <button
+            type="submit"
+            // onClick={() => {
+            //   localStorage.setItem("token", );
+            // }}
+          >
+            Log in
+          </button>
         )}
       </form>
     </div>
