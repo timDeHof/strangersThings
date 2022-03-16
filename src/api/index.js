@@ -20,13 +20,20 @@ export const fetchGetPosts = async () => {
 };
 
 // it should send the user info to the API and return a Token.
-export const registerUser = async () => {
-  try {
-    const response = await fetch(`${URL}/users/register`);
-    const result = await response.json();
-    if (result.error) throw result.error;
-    return result;
-  } catch (err) {
-    console.error("Uh oh, trouble fetching person!", err);
-  }
+export const registerUser = async (username, password) => {
+  const response = await fetch(`${URL}/users/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      user: {
+        username,
+        password,
+      },
+    }),
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
 };
