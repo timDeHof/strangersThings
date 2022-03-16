@@ -64,6 +64,10 @@ body {
   margin-bottom: 3.3px;
   padding: 8px;
 }
+.post h2 {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.9);
+}
 .logIn {
   margin-left: 350px;
   margin-top: 200px;
