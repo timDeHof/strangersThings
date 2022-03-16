@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 
-import { registerUser } from "../api";
+import { loginUser } from "../api";
 
 function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  useEffect(() => {
-    const getToken = async () => {
-      const response = await registerUser();
-      console.log(response);
-    };
-    getToken();
-  }, []);
+  // useEffect(() => {
+  //   const getToken = async () => {
+  //     const response = await loginUser(username, password);
+  //     console.log(response);
+  //   };
+  //   getToken();
+  // }, []);
 
   return (
     <div className="logIn">
@@ -19,10 +19,19 @@ function Login() {
         Welcome to Stranger's Things <br />
         Please login to start the Bargin's!
       </h1>
-      <form className="form" onSubmit={true}>
+      <form
+        className="form"
+        onSubmit={async (ev) => {
+          ev.preventDefault();
+
+          const result = await loginUser(username, password);
+          console.log(result);
+        }}
+      >
         {" "}
         {/* // write a handleSubmit fcn */}
         <input
+          value={username}
           type="text"
           placeholder="username"
           onChange={(ev) => {
@@ -30,6 +39,7 @@ function Login() {
           }}
         />
         <input
+          value={password}
           type="password"
           placeholder="password"
           onChange={(ev) => {
