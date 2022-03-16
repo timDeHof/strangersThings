@@ -69,3 +69,17 @@ export const createPost = async ({ post }, token) => {
   console.log(data);
   return data;
 };
+// adds new message to a specific post
+export const addMessage = async (postId, { message }, token) => {
+  const response = await fetch(`${URL}/posts/${postId}/messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ message }),
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
