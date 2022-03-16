@@ -15,7 +15,7 @@ const Posts = () => {
 
   // fetch all posts
 
-  // console.log("posts:", posts);
+  console.log("posts:", posts);
   return (
     <div className="posts">
       <CreatePost />

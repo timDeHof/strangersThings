@@ -11,14 +11,17 @@ function CreatePost() {
   // console.log(token);
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    const postObject = {
-      title: { title },
-      description: { description },
-      price: { price },
-      location: { location },
+    const post = {
+      post: {
+        title: `${title}`,
+        description: `${description}`,
+        price: `${price}`,
+        location: `${location}`,
+        willDeliver: true,
+      },
     };
-    console.log(postObject);
-    const result = await createPost(postObject, token);
+
+    const result = await createPost(post, token);
 
     // console.log(result);
   };
