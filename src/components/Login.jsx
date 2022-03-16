@@ -21,7 +21,7 @@ function Login() {
       </h1>
       <form className="form" onSubmit={true}>
         {" "}
-        // write a handleSubmit fcn
+        {/* // write a handleSubmit fcn */}
         <input
           type="text"
           placeholder="username"

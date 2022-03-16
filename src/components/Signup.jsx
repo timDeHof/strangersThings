@@ -6,8 +6,10 @@ function SignUp({ setToken }) {
   const [password, setPassword] = useState("");
 
   return (
-    <div>
-      <h1>Thank you for signing up!</h1>
+    <div className="signUp">
+      <h1>
+        Don't have an account? <br /> Sign up today!
+      </h1>
       <form
         className="form"
         onSubmit={async (ev) => {

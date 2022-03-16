@@ -60,15 +60,18 @@ body {
 }
 .post {
   flex-direction: column;
-  border: 3px solid white;
-  margin-bottom: 3px;
-  /* padding: 12px; */
+  border: 4px inset white;
+  margin-bottom: 3.3px;
+  padding: 8px;
 }
 .logIn {
-  /* margin: 10% auto;
-  padding: 80px; */
-  height: 100%;
-  width: 100%;
+  margin-left: 350px;
+  margin-top: 200px;
+  padding: 50px;
+  height: 50%;
+  width: 50%;
+  border: 3.5px solid white;
+  display: flex;
 }
 .logIn h1 {
   text-align: center;
@@ -92,5 +95,17 @@ body {
   width: 285px;
   margin-bottom: 3px;
   padding: 10px 15px;
+  text-align: center;
+}
+.signUp {
+  margin-left: 350px;
+  margin-top: 200px;
+  padding: 50px;
+  height: 50%;
+  width: 50%;
+  border: 3.5px solid white;
+  display: flex;
+}
+.signUp h1 {
   text-align: center;
 }
