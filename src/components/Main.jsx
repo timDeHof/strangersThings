@@ -3,15 +3,15 @@ import { Switch, Route } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import SignUp from "./Signup";
 import Navbar from "./Navbar";
-import Posts from "./Posts";
+import PostsList from "./PostsList";
 
 const Main = () => {
   return (
     <div className="web-page">
       <Navbar />
       <Switch>
-        <Route path="/posts">
-          <Posts />
+        <Route path="/postsList">
+          <PostsList />
         </Route>
         <Route path="/loginForm">
           <LoginForm />

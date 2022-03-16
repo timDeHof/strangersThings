@@ -5,7 +5,7 @@
 
 import React from "react";
 import Navbar from "./Navbar";
-import Posts from "./Posts";
+import Posts from "./PostsList";
 
 const Publicprofile = () => {
   return (

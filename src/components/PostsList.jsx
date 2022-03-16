@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchGetPosts } from "../api";
 import CreatePost from "./CreatePost";
 
-const Posts = () => {
+const PostsList = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
@@ -38,4 +38,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default PostsList;
