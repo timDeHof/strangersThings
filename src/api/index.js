@@ -57,4 +57,18 @@ export const loginUser = async (username, password) => {
 };
 
 // singlePost
-//
+export const createPost = async (postObject, token) => {
+  const response = await fetch(`${URL}/users/post`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      post: postObject,
+    }),
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
