@@ -19,9 +19,12 @@
   color: white;
   text-shadow: 2px 2px grey;
   text-align: center;
-  border: 2px outset white;
+  border: 2.5px outset white;
+  font-size: 18px;
 }
-
+.link {
+  text-shadow: 1.5px 1.5px grey;
+}
 .link :visited {
   color: white;
   text-decoration: none;
@@ -33,6 +36,7 @@
 .link :hover {
   color: black;
   border: 1px outset white;
+  border-radius: 13%;
 }
 .link :active {
   color: rgba(37, 37, 135, 0.743);
@@ -44,7 +48,7 @@ body {
   margin: auto;
 }
 .navBar {
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   list-style-type: none;
 }

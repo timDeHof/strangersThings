@@ -15,7 +15,10 @@ function Login() {
 
   return (
     <div className="logIn">
-      <h1>Please log in!</h1>
+      <h1>
+        Welcome to Stranger's Things <br />
+        Please login to start the Bargin's!
+      </h1>
       <form className="form" onSubmit={true}>
         {" "}
         // write a handleSubmit fcn
