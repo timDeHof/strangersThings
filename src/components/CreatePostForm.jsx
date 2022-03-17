@@ -30,7 +30,7 @@ function CreatePostForm({ posts, setPosts }) {
     // console.log(result);
   };
   return (
-    <div>
+    <div className="createPostForm">
       <h3>Create a Post </h3>
       <form onSubmit={handleSubmit}>
         <input
@@ -59,14 +59,16 @@ function CreatePostForm({ posts, setPosts }) {
           value={location}
           onChange={(ev) => setLocation(ev.target.value)}
         ></input>
-        <input
-          type="checkbox"
-          placeholder="willDeliver"
-          id="willDeliver"
-          value={willDeliver}
-          onChange={(ev) => setWillDeliver(ev.target.value)}
-        ></input>
-        <label htmlFor="willDeliver">Will Deliver</label>
+        <span>
+          <input
+            type="checkbox"
+            placeholder="willDeliver"
+            id="willDeliver"
+            value={willDeliver}
+            onChange={(ev) => setWillDeliver(ev.target.value)}
+          ></input>
+          <label htmlFor="willDeliver">Will Deliver</label>
+        </span>
         <button type="submit">Submit</button>
       </form>
     </div>
