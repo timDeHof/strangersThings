@@ -11,6 +11,8 @@ const PostsList = ({ userObj }) => {
       setPosts(response);
     };
     getPosts();
+    let user = userObj.data;
+    console.log(user);
   }, []);
   // fetch all posts
   //pass the userObj into postList
