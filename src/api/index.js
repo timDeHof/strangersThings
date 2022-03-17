@@ -69,6 +69,18 @@ export const createPost = async ({ post }, token) => {
   console.log(data);
   return data;
 };
+// Fetch already logged in user's relevant data
+export const fetchUser = async (token) => {
+  const response = await fetch(`${URL}/users/me`, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
 // adds new message to a specific post
 export const addMessage = async (postId, { message }, token) => {
   const response = await fetch(`${URL}/posts/${postId}/messages`, {

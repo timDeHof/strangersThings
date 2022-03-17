@@ -12,7 +12,6 @@ const PostsList = () => {
     };
     getPosts();
   }, []);
-
   // fetch all posts
 
   //console.log("posts:", posts);

@@ -4,6 +4,7 @@ import LoginForm from "./LoginForm";
 import SignUpForm from "./SignupForm";
 import Navbar from "./Navbar";
 import PostsList from "./PostsList";
+import { fetchUser } from "../api";
 
 const Main = () => {
   const [userObj, setUserObj] = useState({});
@@ -12,6 +13,13 @@ const Main = () => {
     let localStorageToken = localStorage.getItem("token");
     if (localStorageToken) {
       console.log("Token inside useEffect:", localStorageToken);
+      const getUser = async () => {
+        const response = await fetchUser(token);
+        setUserObj(response);
+      };
+      getUser();
+      console.log(userObj);
+
       // use token in a ajax fcn to get me object
       // pass the userObj into postList
       // in postList find user id and check if it is post author's Id
