@@ -12,6 +12,10 @@ const Main = () => {
     let localStorageToken = localStorage.getItem("token");
     if (localStorageToken) {
       console.log("Token inside useEffect:", localStorageToken);
+      // use token in a ajax fcn to get me object
+      // pass the userObj into postList
+      // in postList find user id and check if it is post author's Id
+      //  if so, render a delete button and edit post form.
     }
   }, [token]);
   return (
