@@ -98,13 +98,26 @@ export const addMessage = async (postId, { message }, token) => {
 
 // this will update a post
 export const editPost = async ({ updateObj }, token, postId) => {
-  const response = await fetch(`${URL}/posts/${postId}/`, {
+  const response = await fetch(`${URL}/posts/${postId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ updateObj }),
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
+
+export const deletePost = async (token, postId) => {
+  const response = await fetch(`${URL}/posts/${postId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
   });
   const data = await response.json();
   console.log(data);

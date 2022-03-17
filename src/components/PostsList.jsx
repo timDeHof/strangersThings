@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { fetchGetPosts } from "../api";
 import CreatePostForm from "./CreatePostForm";
+import SinglePost from "./SinglePost";
 
 const PostsList = ({ userObj }) => {
   const [posts, setPosts] = useState([]);
