@@ -66,7 +66,7 @@ export const createPost = async ({ post }, token) => {
     body: JSON.stringify({ post }),
   });
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
   return data;
 };
 // Fetch already logged in user's relevant data
