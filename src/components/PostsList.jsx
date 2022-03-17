@@ -4,7 +4,7 @@ import { fetchGetPosts, editPost } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 
-const PostsList = ({ userObj }) => {
+const PostsList = ({ userObj, token }) => {
   const [posts, setPosts] = useState([]);
 
   console.log("This is userObj first into PostList", { userObj });
@@ -31,7 +31,7 @@ const PostsList = ({ userObj }) => {
 
       <h1>Posts</h1>
       {posts.map((post) => {
-        return <SinglePost key={post._id} post={post} />;
+        return <SinglePost key={post._id} post={post} token={token} />;
       })}
     </div>
   );
