@@ -9,6 +9,8 @@ import { fetchUser } from "../api";
 const Main = () => {
   const [userObj, setUserObj] = useState({});
   const [token, setToken] = useState("");
+  const [userId, setUserId] = useState("");
+
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
     if (localStorageToken) {
@@ -16,9 +18,11 @@ const Main = () => {
       const getUser = async () => {
         const response = await fetchUser(token);
         setUserObj(response);
+        //setUserId(response.data._id);
       };
       getUser();
       console.log("This is userObj from Main.jsx:", userObj);
+      //console.log("The user ID is:", userId);
 
       // use token in a ajax fcn to get me object
       // pass the userObj into postList

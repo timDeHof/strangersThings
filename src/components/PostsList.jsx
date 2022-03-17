@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchGetPosts } from "../api";
+import { fetchGetPosts, editPost } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 
@@ -16,6 +16,9 @@ const PostsList = ({ userObj }) => {
     getPosts();
     let user = userObj.data;
     console.log("This is userObj from the useEffect in PostList:", user);
+    // let userId = userObj.data._id;
+    // setUserId(userId);
+    // console.log("The user ID is:", userId);
   }, []);
   // fetch all posts
   //pass the userObj into postList
