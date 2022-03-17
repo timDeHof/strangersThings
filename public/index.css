@@ -40,7 +40,7 @@
   border-radius: 13%;
 }
 .link :active {
-  color: rgba(37, 37, 135, 0.743);
+  color: rgb(255, 255, 255);
 }
 
 body {
