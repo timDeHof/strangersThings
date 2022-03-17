@@ -6,6 +6,8 @@ import SinglePost from "./SinglePost";
 
 const PostsList = ({ userObj }) => {
   const [posts, setPosts] = useState([]);
+
+  console.log("This is userObj first into PostList", { userObj });
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetchGetPosts();
@@ -13,7 +15,7 @@ const PostsList = ({ userObj }) => {
     };
     getPosts();
     let user = userObj.data;
-    console.log(user);
+    console.log("This is userObj from the useEffect in PostList:", user);
   }, []);
   // fetch all posts
   //pass the userObj into postList
@@ -22,21 +24,11 @@ const PostsList = ({ userObj }) => {
   //console.log("posts:", posts);
   return (
     <div className="posts">
-      {localStorage.getItem("token") ? (
-        <CreatePostForm posts={posts} setPosts={setPosts} />
-      ) : null}
+      <CreatePostForm posts={posts} setPosts={setPosts} />
+
       <h1>Posts</h1>
       {posts.map((post) => {
-        return (
-          <div className="post" key={post._id}>
-            <h2>{`Title: ${post.title}`}</h2>
-            <p>{`Description: ${post.description}`}</p>
-            <p>
-              <strong>{`Author: ${post.author.username}`}</strong>
-            </p>
-            <p>{`Price: ${post.price}`}</p>
-          </div>
-        );
+        return <SinglePost key={post._id} post={post} />;
       })}
     </div>
   );

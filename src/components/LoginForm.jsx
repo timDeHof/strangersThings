@@ -24,10 +24,10 @@ function LoginForm({ setToken }) {
           const result = await loginUser(username, password);
           setMessage(result.data.message);
 
-          console.log(result);
+          // console.log(result);
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
-          console.log(message);
+          // console.log(message);
           setUserName("");
           setPassword("");
         }}

@@ -18,7 +18,7 @@ const Main = () => {
         setUserObj(response);
       };
       getUser();
-      console.log(userObj);
+      console.log("This is userObj from Main.jsx:", userObj);
 
       // use token in a ajax fcn to get me object
       // pass the userObj into postList

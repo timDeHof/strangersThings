@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-const SinglePost = ({ token, post, posts, setPost }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [location, setLocation] = useState("");
-  const [willDeliver, setWillDeliver] = useState(false);
+const SinglePost = ({ post }) => {
   return (
     <div className="post" key={post._id}>
       <h2>{`Title: ${post.title}`}</h2>
