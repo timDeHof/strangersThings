@@ -31,7 +31,7 @@ const Main = () => {
       <Navbar />
       <Switch>
         <Route path="/postsList">
-          <PostsList />
+          <PostsList userObj={userObj} />
         </Route>
         <Route path="/loginForm">
           <LoginForm setToken={setToken} />

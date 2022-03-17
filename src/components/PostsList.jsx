@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchGetPosts } from "../api";
 import CreatePostForm from "./CreatePostForm";
 
-const PostsList = () => {
+const PostsList = ({ userObj }) => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
@@ -13,7 +13,9 @@ const PostsList = () => {
     getPosts();
   }, []);
   // fetch all posts
-
+  //pass the userObj into postList
+  // in postList find user id and check if it is post author's Id
+  //  if so, render a delete button and edit post form.
   //console.log("posts:", posts);
   return (
     <div className="posts">
