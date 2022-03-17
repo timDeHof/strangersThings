@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { loginUser } from "../api";
 
-function LoginForm() {
+function LoginForm({ setToken }) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   let [message, setMessage] = useState("");
@@ -24,11 +24,9 @@ function LoginForm() {
           const result = await loginUser(username, password);
           setMessage(result.data.message);
 
-          //console.log(result);
-          function getMessage(message) {
-            return <h3>`${message}`</h3>;
-          }
-          getMessage(message);
+          console.log(result);
+          localStorage.setItem("token", result.data.token);
+          setToken(result.data.token);
           console.log(message);
           setUserName("");
           setPassword("");
@@ -54,25 +52,8 @@ function LoginForm() {
           min="10"
           required
         />
-        {localStorage.getItem("token") ? (
-          <button
-            type="submit"
-            onClick={() => {
-              //localStorage.clear();
-            }}
-          >
-            Log out
-          </button>
-        ) : (
-          <button
-            type="submit"
-            // onClick={() => {
-            //   localStorage.setItem("token", );
-            // }}
-          >
-            Log in
-          </button>
-        )}
+
+        <button type="submit">Log in</button>
       </form>
     </div>
   );

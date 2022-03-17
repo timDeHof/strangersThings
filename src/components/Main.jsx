@@ -6,6 +6,14 @@ import Navbar from "./Navbar";
 import PostsList from "./PostsList";
 
 const Main = () => {
+  const [userObj, setUserObj] = useState({});
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    let localStorageToken = localStorage.getItem("token");
+    if (localStorageToken) {
+      console.log("Token inside useEffect:", localStorageToken);
+    }
+  }, [token]);
   return (
     <div className="web-page">
       <Navbar />
@@ -14,10 +22,10 @@ const Main = () => {
           <PostsList />
         </Route>
         <Route path="/loginForm">
-          <LoginForm />
+          <LoginForm setToken={setToken} />
         </Route>
         <Route path="/signupForm">
-          <SignUpForm />
+          <SignUpForm setToken={setToken} />
         </Route>
       </Switch>
     </div>

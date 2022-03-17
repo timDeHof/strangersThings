@@ -24,7 +24,8 @@ function CreatePostForm({ posts, setPosts }) {
     };
 
     const result = await createPost(post, token);
-    setPosts([result, ...posts]); // would like for this to re-render posts with new post
+    let newPost = result.data.post;
+    setPosts([newPost, ...posts]); // would like for this to re-render posts with new post
     // I get an error but refresh page the new post shows up
 
     // console.log(result);
