@@ -64,19 +64,19 @@ function CreatePostForm({ posts, setPosts }) {
           value={location}
           onChange={(ev) => setLocation(ev.target.value)}
         ></input>
-        <span>
+        <span className="checkbox">
           <input
             type="checkbox"
             placeholder="willDeliver"
             id="willDeliver"
             value={willDeliver}
             onChange={(ev) => setWillDeliver(ev.target.value)}
-          ></input>
-          <p>Will Deliver</p>{" "}
-          <p className="cpWillDeliver">
-            <label htmlFor="willDeliver">Will Deliver</label>
-          </p>
+          ></input>{" "}
         </span>
+        <p className="cpWillDeliver">
+          <label htmlFor="willDeliver">Will Deliver</label>
+        </p>
+
         <p className="cpSubmit">
           <button type="submit">Submit</button>
         </p>
