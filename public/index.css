@@ -68,9 +68,20 @@ body {
   margin-bottom: 3.3px;
   padding: 8px;
 }
+.post button {
+  width: 20%;
+}
+.post input {
+  width: 20%;
+  text-align: center;
+}
 .post h2 {
   text-decoration: underline;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(50, 90, 177);
+}
+.description {
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .logIn {
   margin-left: 350px;

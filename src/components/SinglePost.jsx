@@ -41,7 +41,7 @@ const SinglePost = ({ post, token }) => {
         <button type="submit">Update Title</button>
       </form>
       {/* Description */}
-      <p>{`Description: ${post.description}`}</p>
+      <p className="description">{`Description: ${post.description}`}</p>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="description"
