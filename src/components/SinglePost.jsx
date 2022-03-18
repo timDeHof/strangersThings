@@ -38,7 +38,7 @@ const SinglePost = ({ post, token }) => {
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
         />
-        <button type="submit">Update Title</button>
+        <button type="submit">Update </button>
       </form>
       {/* Description */}
       <p className="description">{`Description: ${post.description}`}</p>
@@ -48,21 +48,21 @@ const SinglePost = ({ post, token }) => {
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
         />
-        <button type="submit">Update Description</button>
+        <button type="submit">Update </button>
       </form>
       {/* Author */}
-      <p>
+      <p className="author">
         <strong>{`Author: ${post.author.username}`}</strong>
       </p>
       {/* Price */}
-      <p>{`Price: ${post.price}`}</p>
+      <p className="price">{`Price: $ ${post.price}`}</p>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="price"
+          placeholder="$ price"
           value={newPrice}
           onChange={(e) => setNewPrice(e.target.value)}
         />
-        <button type="submit">Update Price</button>
+        <button type="submit">Update</button>
       </form>
 
       {/* we need a section for will deliver */}
