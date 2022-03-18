@@ -51,7 +51,7 @@ export const loginUser = async (username, password) => {
     }),
   });
   const data = await response.json();
-  //console.log(data);
+  console.log(data);
   return data;
 };
 
@@ -78,7 +78,7 @@ export const fetchUser = async (token) => {
     },
   });
   const data = await response.json();
-  //console.log(data);
+  console.log(data);
   return data;
 };
 // adds new message to a specific post

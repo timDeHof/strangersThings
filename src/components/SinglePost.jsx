@@ -18,8 +18,8 @@ const SinglePost = ({ post, token }) => {
         // willDeliver: `${willDeliver}`,
       },
     };
-    // const data = await editPost(post, token, postId);
-    // console.log(data);
+    const data = await editPost(post, token, postId);
+    console.log(data);
     console.log(post);
 
     //console.log("params:", post, token, postId);

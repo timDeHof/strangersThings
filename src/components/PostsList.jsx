@@ -7,7 +7,7 @@ import SinglePost from "./SinglePost";
 const PostsList = ({ userObj, token }) => {
   const [posts, setPosts] = useState([]);
 
-  console.log("This is userObj first into PostList", { userObj });
+  //console.log("This is userObj first into PostList", { userObj });
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetchGetPosts();
