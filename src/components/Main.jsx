@@ -20,9 +20,9 @@ const Main = () => {
 
       if (localStorageToken) {
         setToken(localStorageToken);
+        getUser();
       }
       console.log("Token inside useEffect:", localStorageToken);
-      getUser();
 
       // use token in a ajax fcn to get me object
       // pass the userObj into postList
