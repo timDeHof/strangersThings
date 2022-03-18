@@ -29,7 +29,7 @@ const PostsList = ({ userObj, token }) => {
     <div className="posts">
       <CreatePostForm posts={posts} setPosts={setPosts} />
 
-      <h1>Posts</h1>
+      <h1 className="postTitle">Posts</h1>
       {posts.map((post) => {
         return <SinglePost key={post._id} post={post} token={token} />;
       })}

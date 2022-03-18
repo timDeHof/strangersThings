@@ -64,26 +64,28 @@ body {
   padding: 50px;
   height: 50%;
   width: 50%;
-  border: 3.5px solid white;
-  display: flex;
+  border: 2px outset white;
+  box-shadow: 3px 3px 3px 3px rgba(50, 90, 177, 0.584);
 }
 .logIn h1 {
   text-align: center;
+  padding-bottom: 15px;
 }
 
 /* SIGN UP CSS */
 
 .signUp {
-  margin-left: 350px;
+  margin-left: 340px;
   margin-top: 200px;
   padding: 50px;
   height: 50%;
   width: 50%;
-  border: 3.5px solid white;
-  display: flex;
+  border: 2px outset white;
+  box-shadow: 3px 3px 3px 3px rgba(50, 90, 177, 0.584);
 }
 .signUp h1 {
   text-align: center;
+  padding-bottom: 15px;
 }
 
 /* BOTH LOGIN & SIGN UP CSS  */
@@ -97,6 +99,7 @@ body {
 .form input {
   width: 250px;
   margin: 0 auto 10px auto;
+  margin-left: 15px;
   padding: 10px 15px;
   text-align: center;
 }
@@ -105,10 +108,15 @@ body {
   margin-bottom: 3px;
   padding: 10px 15px;
   text-align: center;
+  margin-left: 15px;
 }
 
 /* POST PAGE CSS  */
-
+.postTitle {
+  text-align: center;
+  color: rgb(2, 0, 0);
+  text-shadow: 1px 1px 2px rgb(50, 90, 177);
+}
 .posts {
   flex-direction: column;
   justify-content: center;
@@ -118,9 +126,10 @@ body {
 .post {
   flex-direction: column;
   border: 4px inset white;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   padding-bottom: 10px;
   padding-left: 8px;
+  box-shadow: 7px 5px 5px rgb(50, 90, 177);
 }
 .post button {
   width: 10%;
@@ -142,7 +151,7 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 17px;
-  color: red;
+  color: rgb(50, 90, 177);
 }
 .author {
   font-family: Georgia, "Times New Roman", Times, serif;
