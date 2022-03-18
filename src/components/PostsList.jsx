@@ -14,8 +14,8 @@ const PostsList = ({ userObj, token }) => {
       setPosts(response);
     };
     getPosts();
-    let user = userObj.data;
-    console.log("This is userObj from the useEffect in PostList:", user);
+    //let user = userObj.data;
+    //console.log("This is userObj from the useEffect in PostList:", user);
     // let userId = userObj.data._id;
     // setUserId(userId);
     // console.log("The user ID is:", userId);

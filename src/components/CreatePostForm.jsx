@@ -26,6 +26,11 @@ function CreatePostForm({ posts, setPosts }) {
     const result = await createPost(post, token);
     let newPost = result.data.post;
     setPosts([newPost, ...posts]);
+    setTitle("");
+    setDescription("");
+    setPrice("");
+    setLocation("");
+    setWillDeliver("");
 
     // console.log(result);
   };
