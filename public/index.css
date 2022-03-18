@@ -1,18 +1,24 @@
+/* THE ENTIRE PAGE */
+
 * {
   padding: 0;
   margin-right: 3vw;
   width: 100%;
-
-  /* display: flex; */
 }
 .web-page {
   flex-direction: column;
   background-color: lightgrey;
-  /* width: 100%; */
 }
 
+body {
+  background-color: lightgrey;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* NAV BAR CSS */
+
 .header {
-  /* display: flex; */
   background-color: rgb(50, 90, 177);
   position: sticky;
   top: 0;
@@ -43,24 +49,20 @@
   color: rgb(255, 255, 255);
 }
 
-body {
-  background-color: lightgrey;
-  max-width: 90%;
-  margin: auto;
-}
 .navBar {
   font-size: 22px;
   display: flex;
   list-style-type: none;
   text-overflow: none;
 }
+
+/* POST PAGE CSS  */
+
 .posts {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
-
-  /* margin: 1vw; */
 }
 .post {
   flex-direction: column;
@@ -96,6 +98,9 @@ body {
   border: 2px outset white;
   width: 30%;
 }
+
+/* LOGIN CSS */
+
 .logIn {
   margin-left: 350px;
   margin-top: 200px;
@@ -108,27 +113,9 @@ body {
 .logIn h1 {
   text-align: center;
 }
-.form {
-  display: block;
-  width: 300px;
-  position: relative;
-  margin: auto;
-  /* border: 2px solid white; */
-}
-.form input {
-  width: 250px;
-  /* margin-bottom: 3px;
-  margin-left: 5px; */
-  margin: 0 auto 10px auto;
-  padding: 10px 15px;
-  text-align: center;
-}
-.form button {
-  width: 285px;
-  margin-bottom: 3px;
-  padding: 10px 15px;
-  text-align: center;
-}
+
+/* SIGN UP CSS */
+
 .signUp {
   margin-left: 350px;
   margin-top: 200px;
@@ -141,6 +128,29 @@ body {
 .signUp h1 {
   text-align: center;
 }
+
+/* BOTH LOGIN & SIGN UP CSS  */
+
+.form {
+  display: block;
+  width: 300px;
+  position: relative;
+  margin: auto;
+}
+.form input {
+  width: 250px;
+  margin: 0 auto 10px auto;
+  padding: 10px 15px;
+  text-align: center;
+}
+.form button {
+  width: 285px;
+  margin-bottom: 3px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+/* CREATE POST CSS */
 
 .createPostForm {
   border: 1px solid black;
