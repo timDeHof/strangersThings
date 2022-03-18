@@ -72,9 +72,14 @@ function CreatePostForm({ posts, setPosts }) {
             value={willDeliver}
             onChange={(ev) => setWillDeliver(ev.target.value)}
           ></input>
-          <label htmlFor="willDeliver">Will Deliver</label>
+          <p>Will Deliver</p>{" "}
+          <p className="cpWillDeliver">
+            <label htmlFor="willDeliver">Will Deliver</label>
+          </p>
         </span>
-        <button type="submit">Submit</button>
+        <p className="cpSubmit">
+          <button type="submit">Submit</button>
+        </p>
       </form>
     </div>
   );

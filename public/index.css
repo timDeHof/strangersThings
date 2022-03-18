@@ -56,49 +56,6 @@ body {
   text-overflow: none;
 }
 
-/* POST PAGE CSS  */
-
-.posts {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-.post {
-  flex-direction: column;
-  border: 4px inset white;
-  margin-bottom: 4px;
-  padding-bottom: 10px;
-  padding-left: 8px;
-}
-.post button {
-  width: 10%;
-}
-.post input {
-  width: 25%;
-  text-align: center;
-}
-.post h2 {
-  text-decoration: underline;
-  color: rgb(0, 0, 0);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.description {
-  font-size: 20px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.price {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-style: italic;
-  font-size: 17px;
-  color: red;
-}
-.author {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  border: 2px outset white;
-  width: 30%;
-}
-
 /* LOGIN CSS */
 
 .logIn {
@@ -150,16 +107,71 @@ body {
   text-align: center;
 }
 
+/* POST PAGE CSS  */
+
+.posts {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.post {
+  flex-direction: column;
+  border: 4px inset white;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+}
+.post button {
+  width: 10%;
+}
+.post input {
+  width: 25%;
+  text-align: center;
+}
+.post h2 {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+  font-family: "Times New Roman", Times, serif;
+}
+.description {
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.price {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 17px;
+  color: red;
+}
+.author {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px outset white;
+  width: 30%;
+  font-size: 15px;
+}
 /* CREATE POST CSS */
 
 .createPostForm {
-  border: 1px solid black;
-
-  width: 75%;
+  border: 4px outset rgb(228, 228, 228);
+  width: 40%;
+  height: 40%;
   flex-direction: column;
+  margin-top: 10vw;
+  margin-left: 50vw;
+  position: fixed;
 }
 
 .createPostForm h3 {
   text-align: center;
-  justify-content: flex-end;
+  font-size: 23px;
+}
+.cpSubmit {
+  width: 30%;
+  margin-left: 35%;
+}
+.cpWillDeliver {
+  margin-left: 30px;
+  font-size: 18px;
+  margin-top: 10px;
 }
