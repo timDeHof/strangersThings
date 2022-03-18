@@ -14,15 +14,15 @@ const Main = () => {
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
     const getUser = async () => {
-      const response = await fetchUser(token);
+      const response = await fetchUser(localStorageToken);
       setUserObj(response);
       console.log(response);
 
       if (localStorageToken) {
         setToken(localStorageToken);
+        getUser();
       }
       console.log("Token inside useEffect:", localStorageToken);
-      getUser();
 
       // use token in a ajax fcn to get me object
       // pass the userObj into postList
