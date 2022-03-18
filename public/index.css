@@ -99,7 +99,7 @@ body {
 .form input {
   width: 250px;
   margin: 0 auto 10px auto;
-  margin-left: 15px;
+  margin-left: 11px;
   padding: 10px 15px;
   text-align: center;
 }
@@ -108,7 +108,7 @@ body {
   margin-bottom: 3px;
   padding: 10px 15px;
   text-align: center;
-  margin-left: 15px;
+  margin-left: 11px;
 }
 
 /* POST PAGE CSS  */
@@ -156,8 +156,9 @@ body {
 .author {
   font-family: Georgia, "Times New Roman", Times, serif;
   border: 2px outset white;
-  width: 30%;
+  width: 25%;
   font-size: 15px;
+  color: rgba(0, 0, 0, 0.427);
 }
 /* CREATE POST CSS */
 
