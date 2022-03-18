@@ -9,25 +9,30 @@ const SinglePost = ({ post, token }) => {
   const handleSubmit = async (e, postId) => {
     e.preventDefault();
     //console.log("submit");
-    const post = {
-      post: {
-        title: `${newTitle}`,
-        description: `${newDescription}`,
-        price: `${newPrice}`,
-        // location: `${location}`,
-        // willDeliver: `${willDeliver}`,
-      },
-    };
+    const post = {};
+
+    if (newTitle !== "") {
+      post.title = newTitle;
+    }
+    if (newDescription !== "") {
+      post.description = newDescription;
+    }
+    if (newPrice !== "") {
+      post.price = newPrice;
+    }
+
     const data = await editPost(post, token, postId);
     console.log(data);
     console.log(post);
 
     //console.log("params:", post, token, postId);
   };
+
+  const form = {};
   return (
     <div className="post" key={post._id}>
       {/* Title */}
-      <h2>{`Title: ${post.title}`}</h2>
+      <h2>Title: {post.title}</h2>
       <form
         onSubmit={(e) => {
           handleSubmit(e, post._id);
