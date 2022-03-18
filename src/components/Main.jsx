@@ -14,7 +14,7 @@ const Main = () => {
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
     const getUser = async () => {
-      const response = await fetchUser(token);
+      const response = await fetchUser(localStorageToken);
       setUserObj(response);
       console.log(response);
 
