@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchGetPosts, editPost, fetchUser } from "../api";
+import { fetchGetPosts, fetchUser } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 
@@ -19,14 +19,14 @@ const PostsList = ({ token }) => {
     const getUser = async () => {
       const response = await fetchUser(token);
       setUserObj(response);
-      //let user = userObj.data;
-      console.log("This is userObj from the useEffect in PostList:", userObj);
+
       let user = userObj.data._id;
       setUserId(user);
-      console.log("The user ID is:", userId);
     };
     getUser();
   }, []);
+  console.log("This is userObj from the useEffect in PostList:", userObj);
+  console.log("The user ID is:", userId);
   // let filteredPosts = posts.filter(() => {
   //   return posts.author._id === user;
   // });
@@ -42,7 +42,14 @@ const PostsList = ({ token }) => {
 
       <h1 className="postTitle">Posts</h1>
       {posts.map((post) => {
-        return <SinglePost key={post._id} post={post} token={token} />;
+        return (
+          <SinglePost
+            key={post._id}
+            userId={userId}
+            post={post}
+            token={token}
+          />
+        );
       })}
     </div>
   );

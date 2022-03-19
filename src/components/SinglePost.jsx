@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { editPost } from "../api";
 
-const SinglePost = ({ post, token }) => {
+const SinglePost = ({ post, token, userId }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
 
+  console.log("userId in SinglePost:", userId);
   const handleSubmit = async (e, postId) => {
     e.preventDefault();
     //console.log("submit");
@@ -27,7 +28,6 @@ const SinglePost = ({ post, token }) => {
 
     //console.log("params:", post, token, postId);
   };
-
   const form = {};
   return (
     <div className="post" key={post._id}>
