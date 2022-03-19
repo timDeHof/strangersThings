@@ -55,11 +55,25 @@ function LoginForm({ setToken, setIsLoggedIn }) {
           min="10"
           required
         />
-
         <button type="submit">Log in</button>
       </form>
     </div>
   );
 }
+
+//ATTEMPT TO GET LOGIN BUTTON TO CHANGE
+
+// function button() {
+//   if (setIsLoggedIn) {
+//     {
+//       <Button type="submit">Logout</Button>;
+//     }
+//   } else {
+//     {
+//       <Button type="submit">Login</Button>;
+//     }
+//   }
+// }
+// button();
 
 export default LoginForm;
