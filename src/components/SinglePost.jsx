@@ -1,73 +1,30 @@
-import React, { useState } from "react";
-import { editPost } from "../api";
+import React from "react";
 
-const SinglePost = ({ post, token }) => {
-  const [newTitle, setNewTitle] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newPrice, setNewPrice] = useState("");
+const SinglePost = ({ post, token, userId }) => {
+  //console.log("userId in SinglePost:", userId);
 
-  const handleSubmit = async (e, postId) => {
-    e.preventDefault();
-    //console.log("submit");
-    const post = {
-      post: {
-        title: `${newTitle}`,
-        description: `${newDescription}`,
-        price: `${newPrice}`,
-        // location: `${location}`,
-        // willDeliver: `${willDeliver}`,
-      },
-    };
-    const data = await editPost(post, token, postId);
-    console.log(data);
-    console.log(post);
+  //console.log("params:", post, token, postId);
 
-    //console.log("params:", post, token, postId);
-  };
-  return (
+  const form = (
     <div className="post" key={post._id}>
       {/* Title */}
-      <h2>{`Title: ${post.title}`}</h2>
-      <form
-        onSubmit={(e) => {
-          handleSubmit(e, post._id);
-        }}
-      >
-        <input
-          placeholder="title"
-          value={newTitle}
-          onChange={(e) => setNewTitle(e.target.value)}
-        />
-        <button type="submit">Update </button>
-      </form>
+      <h2>Title: {post.title}</h2>
+
       {/* Description */}
-      <p className="description">{`Description: ${post.description}`}</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="description"
-          value={newDescription}
-          onChange={(e) => setNewDescription(e.target.value)}
-        />
-        <button type="submit">Update </button>
-      </form>
+      <p className="description">Description: {post.description}</p>
+
       {/* Author */}
       <p className="author">
-        <strong>{`Author: ${post.author.username}`}</strong>
+        <strong>Author: {post.author.username}</strong>
       </p>
       {/* Price */}
-      <p className="price">{`Price: $ ${post.price}`}</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="$ price"
-          value={newPrice}
-          onChange={(e) => setNewPrice(e.target.value)}
-        />
-        <button type="submit">Update</button>
-      </form>
+      <p className="price">Price: $ {post.price}</p>
 
       {/* we need a section for will deliver */}
+      <p className="Location">Location: {post.location}</p>
     </div>
   );
+  return form;
 };
 
 export default SinglePost;
