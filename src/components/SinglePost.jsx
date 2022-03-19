@@ -45,6 +45,7 @@ const SinglePost = ({ post, token }) => {
       <p className="price">{`Price: $ ${post.price}`}</p>
 
       {/* we need a section for will deliver */}
+      <p className="Location">Location: {post.location}</p>
     </div>
   );
 };

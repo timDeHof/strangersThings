@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from "react";
 
-import { fetchGetPosts, editPost } from "../api";
+import { fetchGetPosts, editPost, fetchUser } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 
-const PostsList = ({ userObj, token }) => {
+const PostsList = ({ token }) => {
+  const [userObj, setUserObj] = useState({});
   const [posts, setPosts] = useState([]);
+  const [userId, setUserId] = useState("");
 
-  //console.log("This is userObj first into PostList", { userObj });
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetchGetPosts();
       setPosts(response);
     };
     getPosts();
-    //let user = userObj.data;
-    //console.log("This is userObj from the useEffect in PostList:", user);
-    // let userId = userObj.data._id;
-    // setUserId(userId);
-    // console.log("The user ID is:", userId);
+    console.log("Posts", posts);
+    const getUser = async () => {
+      const response = await fetchUser(token);
+      setUserObj(response);
+      //let user = userObj.data;
+      console.log("This is userObj from the useEffect in PostList:", userObj);
+      let user = userObj.data._id;
+      setUserId(user);
+      console.log("The user ID is:", userId);
+    };
+    getUser();
   }, []);
+  // let filteredPosts = posts.filter(() => {
+  //   return posts.author._id === user;
+  // });
+  // console.log(filteredPosts);
   // fetch all posts
   //pass the userObj into postList
   // in postList find user id and check if it is post author's Id

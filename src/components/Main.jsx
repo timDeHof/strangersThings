@@ -9,20 +9,18 @@ import { fetchUser } from "../api";
 const Main = () => {
   const [userObj, setUserObj] = useState({});
   const [token, setToken] = useState("");
-  const [userId, setUserId] = useState("");
 
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
+
     const getUser = async () => {
       const response = await fetchUser(localStorageToken);
       setUserObj(response);
-      console.log(response);
 
       if (localStorageToken) {
         setToken(localStorageToken);
         getUser();
       }
-      console.log("Token inside useEffect:", localStorageToken);
 
       // use token in a ajax fcn to get me object
       // pass the userObj into postList
@@ -30,6 +28,8 @@ const Main = () => {
       //  if so, render a delete button and edit post form.
     };
   }, [token]);
+  console.log("userObj:", userObj);
+  console.log("Token inside useEffect:", token);
   return (
     <div className="web-page">
       <Navbar />
