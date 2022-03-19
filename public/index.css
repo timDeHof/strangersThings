@@ -131,13 +131,13 @@ body {
   padding-left: 8px;
   box-shadow: 7px 5px 5px rgb(50, 90, 177);
 }
-.post button {
+/* .post button {
   width: 10%;
 }
 .post input {
   width: 25%;
   text-align: center;
-}
+} */
 .post h2 {
   text-decoration: underline;
   color: rgb(0, 0, 0);
