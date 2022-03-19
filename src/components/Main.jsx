@@ -35,7 +35,7 @@ const Main = () => {
   return (
     <div className="web-page">
       <Navbar />
-      <PostsList />
+
       <Switch>
         <Route path="/postsList">
           <PostsList userObj={userObj} token={token} isLoggedIn={isLoggedIn} />
