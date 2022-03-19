@@ -5,6 +5,7 @@ import SignUpForm from "./SignupForm";
 import Navbar from "./Navbar";
 import PostsList from "./PostsList";
 import { fetchUser } from "../api";
+import Home from "./Home";
 
 const Main = () => {
   const [userObj, setUserObj] = useState({});
@@ -45,6 +46,9 @@ const Main = () => {
         </Route>
         <Route path="/signupForm">
           <SignUpForm setToken={setToken} />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
