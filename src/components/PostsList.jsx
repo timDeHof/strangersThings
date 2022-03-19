@@ -20,8 +20,8 @@ const PostsList = ({ token }) => {
       const response = await fetchUser(token);
       setUserObj(response);
 
-      let user = userObj.data._id;
-      setUserId(user);
+      let user = userObj;
+      setUserId(user.data.username);
     };
     getUser();
   }, []);
@@ -35,7 +35,7 @@ const PostsList = ({ token }) => {
   //pass the userObj into postList
   // in postList find user id and check if it is post author's Id
   //  if so, render a delete button and edit post form.
-  //console.log("posts:", posts);
+  console.log("posts:", posts);
   return (
     <div className="posts">
       <CreatePostForm posts={posts} setPosts={setPosts} />

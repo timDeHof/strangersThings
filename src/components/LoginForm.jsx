@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { loginUser } from "../api";
 
-function LoginForm({ setToken }) {
+function LoginForm({ setToken, setIsLoggedIn }) {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   let [message, setMessage] = useState("");
@@ -27,6 +27,8 @@ function LoginForm({ setToken }) {
           // console.log(result);
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
+          {
+          }
           // console.log(message);
           setUserName("");
           setPassword("");

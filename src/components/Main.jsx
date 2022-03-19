@@ -9,6 +9,7 @@ import { fetchUser } from "../api";
 const Main = () => {
   const [userObj, setUserObj] = useState({});
   const [token, setToken] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
@@ -38,7 +39,7 @@ const Main = () => {
           <PostsList userObj={userObj} token={token} />
         </Route>
         <Route path="/loginForm">
-          <LoginForm setToken={setToken} />
+          <LoginForm setToken={setToken} setIsLoggedIn={setIsLoggedIn} />
         </Route>
         <Route path="/signupForm">
           <SignUpForm setToken={setToken} />
