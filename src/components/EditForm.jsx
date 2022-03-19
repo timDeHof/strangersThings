@@ -1,6 +1,6 @@
 import React from "react";
 // import forms from singlePost
-const Form = () => {
+const EditForm = () => {
   return (
     // <form
     //     onSubmit={(e) => {
@@ -42,4 +42,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default EditForm;
