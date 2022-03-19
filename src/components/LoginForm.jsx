@@ -28,6 +28,7 @@ function LoginForm({ setToken, setIsLoggedIn }) {
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
           {
+            result.success ? setIsLoggedIn(true) : setIsLoggedIn(false);
           }
           // console.log(message);
           setUserName("");

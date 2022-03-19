@@ -4,7 +4,7 @@ import { fetchGetPosts, fetchUser } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 
-const PostsList = ({ token }) => {
+const PostsList = ({ token, isLoggedIn }) => {
   const [userObj, setUserObj] = useState({});
   const [posts, setPosts] = useState([]);
   const [userId, setUserId] = useState("");
@@ -38,7 +38,12 @@ const PostsList = ({ token }) => {
   console.log("posts:", posts);
   return (
     <div className="posts">
-      <CreatePostForm posts={posts} setPosts={setPosts} />
+      {isLoggedIn ? (
+        <CreatePostForm posts={posts} setPosts={setPosts} />
+      ) : (
+        <h1>Please log in or register to make new post</h1>
+      )}
+      {/* //<CreatePostForm posts={posts} setPosts={setPosts} /> */}
 
       <h1 className="postTitle">Posts</h1>
       {posts.map((post) => {

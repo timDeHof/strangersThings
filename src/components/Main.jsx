@@ -31,12 +31,13 @@ const Main = () => {
   }, [token]);
   console.log("userObj:", userObj);
   console.log("Token inside useEffect:", token);
+  console.log("So is the user logged in?", isLoggedIn);
   return (
     <div className="web-page">
       <Navbar />
       <Switch>
         <Route path="/postsList">
-          <PostsList userObj={userObj} token={token} />
+          <PostsList userObj={userObj} token={token} isLoggedIn={isLoggedIn} />
         </Route>
         <Route path="/loginForm">
           <LoginForm setToken={setToken} setIsLoggedIn={setIsLoggedIn} />
