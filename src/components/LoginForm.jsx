@@ -22,7 +22,7 @@ function LoginForm({ setToken }) {
           ev.preventDefault();
 
           const result = await loginUser(username, password);
-          setMessage(result.data.message);
+          //setMessage(result.data.message);
 
           // console.log(result);
           localStorage.setItem("token", result.data.token);
