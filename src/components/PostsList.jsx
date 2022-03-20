@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchGetPosts, fetchUser } from "../api";
 import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
+import SearchPost from "./SearchPost";
 
 const PostsList = ({ token, isLoggedIn }) => {
   const [userObj, setUserObj] = useState({});
@@ -34,6 +35,7 @@ const PostsList = ({ token, isLoggedIn }) => {
   // in postList find user id and check if it is post author's Id
   //  if so, render a delete button and edit post form.
   console.log("posts:", posts);
+
   return (
     <div className="posts">
       {isLoggedIn ? (
@@ -41,6 +43,7 @@ const PostsList = ({ token, isLoggedIn }) => {
       ) : (
         <h1>Please log in or register to make new post</h1>
       )}
+      <SearchPost />
 
       <h1 className="postTitle">Posts</h1>
       {posts.map((post, i) => {
