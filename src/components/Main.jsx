@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import PostsList from "./PostsList";
 import { fetchUser } from "../api";
 import Home from "./Home";
+import PrivateProfile from "./PrivateProfile";
 
 const Main = () => {
   const [userObj, setUserObj] = useState({});
@@ -37,6 +38,9 @@ const Main = () => {
       <Navbar />
 
       <Switch>
+        <Route path="/profile">
+          <PrivateProfile token={token} />
+        </Route>
         <Route path="/postsList">
           <PostsList userObj={userObj} token={token} isLoggedIn={isLoggedIn} />
         </Route>

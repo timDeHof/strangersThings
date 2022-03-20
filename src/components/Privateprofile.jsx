@@ -17,17 +17,25 @@
 //                       |           FORM         //
 //                       |                        //
 //----------------------------------------------- //
-import React from "react";
-import CreatePostForm from "./CreatePostForm";
-import Navbar from "./Navbar";
-import Posts from "./PostsList";
+import React, { useState } from "react";
+import { fetchUser } from "../api";
 
-const PrivateProfile = () => {
+const PrivateProfile = ({ token }) => {
+  const [profileName, setProfileName] = useState("");
+  const getProfile = async () => {
+    const response = await fetchUser(token);
+    setProfileName(response.data.username);
+  };
+  getProfile();
+
   return (
     <>
-      <Navbar />
-      <Posts />
-      <CreatePostForm />
+      {/* this will greet the user after they log in */}
+      <h1 className="Profile">{`Welcome: ${profileName}!`}</h1>
+      {/* These are the user's post */}
+      <h3> User Post(s) :</h3>
+      {/* This is the users private messages */}
+      <h3> Message(s) : </h3>
     </>
   );
 };

@@ -49,6 +49,7 @@ const SinglePost = ({ post, userId, token }) => {
 
       {/* we need a section for will deliver */}
       <p className="Location">Location: {post.location}</p>
+      <button>Send Message</button>
     </div>
   );
   const editForm = (
