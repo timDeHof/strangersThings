@@ -6,7 +6,7 @@ const SearchPost = () => {
       <form>
         <input
           type="type"
-          Classname="search"
+          ClassName="search"
           placeholder="search"
           //value={search}
         />

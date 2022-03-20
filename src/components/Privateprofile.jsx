@@ -22,7 +22,7 @@ import CreatePostForm from "./CreatePostForm";
 import Navbar from "./Navbar";
 import Posts from "./PostsList";
 
-const Privateprofile = () => {
+const PrivateProfile = () => {
   return (
     <>
       <Navbar />
@@ -32,4 +32,4 @@ const Privateprofile = () => {
   );
 };
 
-export default Privateprofile;
+export default PrivateProfile;
