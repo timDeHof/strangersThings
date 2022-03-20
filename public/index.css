@@ -200,9 +200,14 @@ body {
   margin-top: 175px;
 }
 .homePage h1 {
-  text-shadow: 2px 2px 3px rgb(31, 211, 22);
+  text-shadow: 2px 2px 3px rgb(46, 46, 46);
   font-size: 50px;
 }
 .homePage p {
   font-size: 25px;
+}
+.homePage a {
+  margin-right: 0px;
+  color: blue;
+  text-decoration: none;
 }
