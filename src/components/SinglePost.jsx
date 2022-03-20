@@ -21,14 +21,15 @@ const SinglePost = ({ post, userId, token }) => {
       post.price = newPrice;
     }
 
-    const data = await editPost(post, token, postId);
+    const data = await editPost(post, token, post._id);
     //console.log(data);
     //console.log(post);
   };
 
-  const handleDelete = async (token, postId) => {
+  const handleDelete = async (token) => {
+    console.log("post id:", post);
     console.log("deleted!");
-    const data = await deletePost(token, postId);
+    const data = await deletePost(token, post._id);
   };
 
   const form = (

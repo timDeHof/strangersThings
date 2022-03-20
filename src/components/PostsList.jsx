@@ -44,10 +44,7 @@ const PostsList = ({ token, isLoggedIn }) => {
 
       <h1 className="postTitle">Posts</h1>
       {posts.map((post, i) => {
-        return (
-          // Now we need to use the userId to compare author's username to our and return a single post with an edit form and delete button attached
-          <SinglePost key={i} post={post} userId={userId} token={token} />
-        );
+        return <SinglePost key={i} post={post} userId={userId} token={token} />;
       })}
     </div>
   );
