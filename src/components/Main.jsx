@@ -4,7 +4,6 @@ import LoginForm from "./LoginForm";
 import SignUpForm from "./SignupForm";
 import Navbar from "./Navbar";
 import PostsList from "./PostsList";
-import { fetchUser } from "../api";
 import Home from "./Home";
 import PrivateProfile from "./PrivateProfile";
 
@@ -30,9 +29,7 @@ const Main = () => {
     // in postList find user id and check if it is post author's Id
     //  if so, render a delete button and edit post form.
   }, [token]);
-  console.log("userObj:", userObj);
-  console.log("Token inside useEffect:", token);
-  console.log("So is the user logged in?", isLoggedIn);
+
   return (
     <div className="web-page">
       <Navbar />

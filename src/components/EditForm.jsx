@@ -8,7 +8,7 @@ const EditForm = ({ post, token }) => {
 
   const handleSubmit = async (e, postId) => {
     e.preventDefault();
-    //console.log("submit");
+
     const post = {};
 
     if (newTitle !== "") {
@@ -22,8 +22,6 @@ const EditForm = ({ post, token }) => {
     }
 
     const data = await editPost(post, token, postId);
-    console.log(data);
-    console.log(post);
   };
   return (
     <form

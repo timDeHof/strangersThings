@@ -10,7 +10,6 @@ function CreatePostForm({ posts, setPosts }) {
 
   const token = localStorage.getItem("token");
 
-  // console.log(token);
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     const post = {
@@ -31,8 +30,6 @@ function CreatePostForm({ posts, setPosts }) {
     setPrice("");
     setLocation("");
     setWillDeliver("");
-
-    // console.log(result);
   };
   return (
     <div className="createPostForm">

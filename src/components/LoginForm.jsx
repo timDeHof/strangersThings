@@ -7,8 +7,6 @@ function LoginForm({ setToken, setIsLoggedIn }) {
   const [password, setPassword] = useState("");
   let [message, setMessage] = useState("");
 
-  //console.log("token is:", localStorage.getItem("token"));
-  // isLogIn = () => {};
   return (
     <div className="logIn">
       <h1>
@@ -22,15 +20,13 @@ function LoginForm({ setToken, setIsLoggedIn }) {
           ev.preventDefault();
 
           const result = await loginUser(username, password);
-          //setMessage(result.data.message);
 
-          // console.log(result);
           localStorage.setItem("token", result.data.token);
           setToken(result.data.token);
           {
             result.success ? setIsLoggedIn(true) : setIsLoggedIn(false);
           }
-          // console.log(message);
+
           setUserName("");
           setPassword("");
         }}

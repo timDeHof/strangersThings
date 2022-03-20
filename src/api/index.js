@@ -33,7 +33,7 @@ export const registerUser = async (username, password) => {
     }),
   });
   const data = await response.json();
-  //console.log(data);
+
   return data;
 };
 // loginUser
@@ -51,7 +51,7 @@ export const loginUser = async (username, password) => {
     }),
   });
   const data = await response.json();
-  console.log("did User sign in?", data);
+
   return data;
 };
 
@@ -66,7 +66,7 @@ export const createPost = async ({ post }, token) => {
     body: JSON.stringify({ post }),
   });
   const data = await response.json();
-  //console.log(data);
+
   return data;
 };
 // Fetch already logged in user's relevant data
@@ -78,7 +78,7 @@ export const fetchUser = async (token) => {
     },
   });
   const data = await response.json();
-  console.log(data);
+
   return data;
 };
 // adds new message to a specific post
@@ -92,7 +92,7 @@ export const addMessage = async (postId, { message }, token) => {
     body: JSON.stringify({ message }),
   });
   const data = await response.json();
-  //console.log(data);
+
   return data;
 };
 
@@ -107,7 +107,7 @@ export const editPost = async ({ updateObj }, token, postId) => {
     body: JSON.stringify({ updateObj }),
   });
   const data = await response.json();
-  //console.log(data);
+
   return data;
 };
 
@@ -120,6 +120,6 @@ export const deletePost = async (token, postId) => {
     },
   });
   const data = await response.json();
-  //console.log(data);
+
   return data;
 };
