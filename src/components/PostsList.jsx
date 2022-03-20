@@ -15,13 +15,13 @@ const PostsList = ({ token, isLoggedIn }) => {
       setPosts(response);
     };
     getPosts();
-    console.log("Posts", posts);
+    //console.log("Posts", posts);
     const getUser = async () => {
       const response = await fetchUser(token);
       setUserObj(response);
 
-      let user = userObj;
-      setUserId(user.data.username);
+      //let user = userObj;
+      setUserId(userObj.data.username);
     };
     getUser();
   }, []);
@@ -35,7 +35,7 @@ const PostsList = ({ token, isLoggedIn }) => {
   //pass the userObj into postList
   // in postList find user id and check if it is post author's Id
   //  if so, render a delete button and edit post form.
-  console.log("posts:", posts);
+  // console.log("posts:", posts);
   return (
     <div className="posts">
       {isLoggedIn ? (

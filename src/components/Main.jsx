@@ -15,20 +15,19 @@ const Main = () => {
   useEffect(() => {
     let localStorageToken = localStorage.getItem("token");
 
-    const getUser = async () => {
-      const response = await fetchUser(localStorageToken);
-      setUserObj(response);
+    // const getUser = async () => {
+    //   const response = await fetchUser(localStorageToken);
+    //   setUserObj(response);
 
-      if (localStorageToken) {
-        setToken(localStorageToken);
-        getUser();
-      }
+    if (localStorageToken) {
+      setToken(localStorageToken);
+      // getUser();
+    }
 
-      // use token in a ajax fcn to get me object
-      // pass the userObj into postList
-      // in postList find user id and check if it is post author's Id
-      //  if so, render a delete button and edit post form.
-    };
+    // use token in a ajax fcn to get me object
+    // pass the userObj into postList
+    // in postList find user id and check if it is post author's Id
+    //  if so, render a delete button and edit post form.
   }, [token]);
   console.log("userObj:", userObj);
   console.log("Token inside useEffect:", token);
