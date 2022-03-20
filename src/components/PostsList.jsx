@@ -21,7 +21,7 @@ const PostsList = ({ token, isLoggedIn }) => {
       setUserObj(response);
 
       //let user = userObj;
-      setUserId(userObj.data.username);
+      setUserId(response.data.username);
     };
     getUser();
   }, []);
