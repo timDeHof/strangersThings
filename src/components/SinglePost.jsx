@@ -8,7 +8,7 @@ const SinglePost = ({ post, userId, token }) => {
 
   const handleSubmit = async (e, postId) => {
     e.preventDefault();
-    //console.log("submit");
+
     const post = {};
 
     if (newTitle !== "") {
@@ -22,13 +22,9 @@ const SinglePost = ({ post, userId, token }) => {
     }
 
     const data = await editPost(post, token, post._id);
-    //console.log(data);
-    //console.log(post);
   };
 
   const handleDelete = async (token) => {
-    console.log("post id:", post);
-    console.log("deleted!");
     const data = await deletePost(token, post._id);
   };
 
