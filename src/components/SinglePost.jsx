@@ -1,9 +1,35 @@
 import React, { useState } from "react";
+import { editPost, deletePost } from "../api";
 
-const SinglePost = ({ post, userId }) => {
+const SinglePost = ({ post, userId, token }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
+
+  const handleSubmit = async (e, postId) => {
+    e.preventDefault();
+    //console.log("submit");
+    const post = {};
+
+    if (newTitle !== "") {
+      post.title = newTitle;
+    }
+    if (newDescription !== "") {
+      post.description = newDescription;
+    }
+    if (newPrice !== "") {
+      post.price = newPrice;
+    }
+
+    const data = await editPost(post, token, postId);
+    //console.log(data);
+    //console.log(post);
+  };
+
+  const handleDelete = async (token, postId) => {
+    console.log("deleted!");
+    const data = await deletePost(token, postId);
+  };
 
   const form = (
     <div className="post" key={post._id}>
@@ -26,6 +52,7 @@ const SinglePost = ({ post, userId }) => {
   );
   const editForm = (
     <form
+      className="post"
       onSubmit={(e) => {
         handleSubmit(e, post._id);
       }}
@@ -44,7 +71,10 @@ const SinglePost = ({ post, userId }) => {
         value={newDescription}
         onChange={(e) => setNewDescription(e.target.value)}
       />
-
+      {/* Author */}
+      <p className="author">
+        <strong>Author: {post.author.username}</strong>
+      </p>
       {/* Price */}
       <p className="price">Price: $ {post.price}</p>
       <input
@@ -53,6 +83,7 @@ const SinglePost = ({ post, userId }) => {
         onChange={(e) => setNewPrice(e.target.value)}
       />
       <button type="submit">Update</button>
+      <button onClick={handleDelete}>Delete</button>
     </form>
   );
   return <>{post.author.username === userId ? editForm : form}</>;
