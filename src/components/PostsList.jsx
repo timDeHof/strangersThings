@@ -19,8 +19,6 @@ const PostsList = ({ token, isLoggedIn }) => {
     const getUser = async () => {
       const response = await fetchUser(token);
       setUserObj(response);
-
-      //let user = userObj;
       setUserId(response.data.username);
     };
     getUser();
