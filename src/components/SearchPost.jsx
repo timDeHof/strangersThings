@@ -8,7 +8,7 @@ const SearchPost = () => {
           type="type"
           Classname="search"
           placeholder="search"
-          value={search}
+          //value={search}
         />
         <button>Search</button>
       </form>
