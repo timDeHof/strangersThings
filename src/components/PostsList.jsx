@@ -26,14 +26,14 @@ const PostsList = ({ token, isLoggedIn }) => {
   console.log("This is userObj from the useEffect in PostList:", userObj);
   console.log("The user ID is:", userId);
   // let filteredPosts = posts.filter(() => {
-  //   return posts.author._id === user;
+  //   return posts.author.username === userId;
   // });
   // console.log(filteredPosts);
   // fetch all posts
   //pass the userObj into postList
   // in postList find user id and check if it is post author's Id
   //  if so, render a delete button and edit post form.
-  // console.log("posts:", posts);
+  console.log("posts:", posts);
   return (
     <div className="posts">
       {isLoggedIn ? (
@@ -41,17 +41,12 @@ const PostsList = ({ token, isLoggedIn }) => {
       ) : (
         <h1>Please log in or register to make new post</h1>
       )}
-      {/* //<CreatePostForm posts={posts} setPosts={setPosts} /> */}
 
       <h1 className="postTitle">Posts</h1>
-      {posts.map((post) => {
+      {posts.map((post, i) => {
         return (
-          <SinglePost
-            key={post._id}
-            userId={userId}
-            post={post}
-            token={token}
-          />
+          // Now we need to use the userId to compare author's username to our and return a single post with an edit form and delete button attached
+          <SinglePost key={i} post={post} userId={userId} />
         );
       })}
     </div>

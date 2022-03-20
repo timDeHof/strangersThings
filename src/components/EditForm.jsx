@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { editPost } from "../api";
 // import forms from singlePost
-const EditForm = () => {
+const EditForm = ({ post, token }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
