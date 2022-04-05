@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { editPost, deletePost } from "../api";
 
-const SinglePost = ({ post, userId, token }) => {
+const SinglePost = ({ deleteButton, post, userId, token }) => {
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
@@ -81,7 +81,7 @@ const SinglePost = ({ post, userId, token }) => {
         onChange={(e) => setNewPrice(e.target.value)}
       />
       <button type="submit">Update</button>
-      <button onClick={handleDelete}>Delete</button>
+      {deleteButton ? <button onClick={handleDelete}>Delete</button> : null}
     </form>
   );
   return <>{post.author.username === userId ? editForm : form}</>;

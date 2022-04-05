@@ -29,7 +29,13 @@ const Main = () => {
     // in postList find user id and check if it is post author's Id
     //  if so, render a delete button and edit post form.
   }, [token]);
-
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+      //run your get user based on if token
+      // setUserObj(getUser())
+    }
+  }, []);
   return (
     <div className="web-page">
       <Navbar />

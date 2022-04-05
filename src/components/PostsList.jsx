@@ -5,11 +5,9 @@ import CreatePostForm from "./CreatePostForm";
 import SinglePost from "./SinglePost";
 import SearchPost from "./SearchPost";
 
-const PostsList = ({ token, isLoggedIn }) => {
-  const [userObj, setUserObj] = useState({});
+const PostsList = ({ userObj, token, isLoggedIn }) => {
   const [posts, setPosts] = useState([]);
   const [userId, setUserId] = useState("");
-
   useEffect(() => {
     const getPosts = async () => {
       const response = await fetchGetPosts();
@@ -36,6 +34,8 @@ const PostsList = ({ token, isLoggedIn }) => {
 
       <h1 className="postTitle">Posts</h1>
       {posts.map((post, i) => {
+        //ternary or if in here somewhere to check if this post.authorid == userObj.id
+        // return <SinglePost deleteButton={true}
         return <SinglePost key={i} post={post} userId={userId} token={token} />;
       })}
     </div>
